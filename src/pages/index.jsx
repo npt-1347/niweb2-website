@@ -9,6 +9,8 @@ import DraftEditor from "./DraftEditor";
 import Citations from "./Citations";
 
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import  SignIn from "./SignIn.jsx";
+import SignUp from "./SignUp.jsx";
 
 const PAGES = {
     
@@ -19,6 +21,10 @@ const PAGES = {
     DraftEditor: DraftEditor,
     
     Citations: Citations,
+
+    SignIn: SignIn,
+
+    SignUp: SignUp,
     
 }
 
@@ -39,22 +45,27 @@ function _getCurrentPage(url) {
 function PagesContent() {
     const location = useLocation();
     const currentPage = _getCurrentPage(location.pathname);
+
+    if (location.pathname === "/" || location.pathname.toLowerCase() === "/signup") {
+        return (
+            <Routes>
+                <Route path="/" element={<SignIn />} />
+
+                 <Route path="/signup" element={<SignUp />} />
+            </Routes>
+        );
+    }
     
     return (
         <Layout currentPageName={currentPage}>
             <Routes>            
+                <Route path="/dashboard" element={<Dashboard />} />
                 
-                    <Route path="/" element={<Dashboard />} />
+                <Route path="/casewizard" element={<CaseWizard />} />
                 
+                <Route path="/drafteditor" element={<DraftEditor />} />
                 
-                <Route path="/Dashboard" element={<Dashboard />} />
-                
-                <Route path="/CaseWizard" element={<CaseWizard />} />
-                
-                <Route path="/DraftEditor" element={<DraftEditor />} />
-                
-                <Route path="/Citations" element={<Citations />} />
-                
+                <Route path="/citations" element={<Citations />} />
             </Routes>
         </Layout>
     );
