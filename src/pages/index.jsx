@@ -1,5 +1,7 @@
 import Layout from "./Layout.jsx";
 
+import Home from "./Home";
+
 import Dashboard from "./Dashboard";
 
 import CaseWizard from "./CaseWizard";
@@ -9,8 +11,14 @@ import DraftEditor from "./DraftEditor";
 import Citations from "./Citations";
 
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+
 import  SignIn from "./SignIn.jsx";
+
 import SignUp from "./SignUp.jsx";
+
+import NavigationBar from "@/components/common/NavigationBar.jsx";
+
+import Footer from "@/components/common/Footer.jsx";
 
 const PAGES = {
     
@@ -46,13 +54,23 @@ function PagesContent() {
     const location = useLocation();
     const currentPage = _getCurrentPage(location.pathname);
 
-    if (location.pathname === "/" || location.pathname.toLowerCase() === "/signup") {
+    if (
+        location.pathname === "/" ||
+        location.pathname.toLowerCase() === "/signin" ||
+        location.pathname.toLowerCase() === "/signup"
+    ) {
         return (
-            <Routes>
-                <Route path="/" element={<SignIn />} />
-
-                 <Route path="/signup" element={<SignUp />} />
+            <>
+             <NavigationBar />
+ <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/signin" element={<SignIn />} />
+                <Route path="/signup" element={<SignUp />} />
             </Routes>
+            <Footer />
+
+            </>
+           
         );
     }
     
