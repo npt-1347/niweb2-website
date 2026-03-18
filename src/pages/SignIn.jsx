@@ -10,6 +10,7 @@ import {
 	CardTitle,
 } from "@/components/ui/card";
 import { Link, useNavigate } from "react-router-dom";
+import { signin } from "@/api/user";
 
 export default function SignIn() {
 	const navigate = useNavigate();
@@ -26,9 +27,15 @@ export default function SignIn() {
 		}));
 	};
 
-	const handleSubmit = (event) => {
+	const handleSubmit = async (event) => {
 		event.preventDefault();
-		navigate("/dashboard");
+
+		try {
+			await signin(formData);
+			navigate("/dashboard");
+		} catch (error) {
+			console.error("Sign in failed", error);
+		}
 	};
 
 	return (
