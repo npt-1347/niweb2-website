@@ -8,6 +8,13 @@
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      var redirect = sessionStorage.getItem('spa-redirect');
+      if (redirect) {
+        sessionStorage.removeItem('spa-redirect');
+        history.replaceState(null, '', location.pathname.replace(/\/$/, '') + redirect);
+      }
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

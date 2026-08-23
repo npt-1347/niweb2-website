@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      // GitHub Pages SPA fallback: redirect deep links to index.html,
+      // preserving the path so the client-side router can restore it.
+      var basePath = '/niweb2-website';
+      var redirectPath = location.pathname.slice(basePath.length) + location.search + location.hash;
+      sessionStorage.setItem('spa-redirect', redirectPath);
+      location.replace(basePath + '/');
+    </script>
+  </head>
+  <body></body>
+</html>
