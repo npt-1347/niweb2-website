@@ -10,6 +10,8 @@ import DraftEditor from "./DraftEditor";
 
 import Citations from "./Citations";
 
+import ScoreMyCase from "./ScoreMyCase";
+
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 
 import  SignIn from "./SignIn.jsx";
@@ -30,9 +32,13 @@ const PAGES = {
     
     Citations: Citations,
 
+    ScoreMyCase: ScoreMyCase,
+
     SignIn: SignIn,
 
     SignUp: SignUp,
+
+    Home: Home,
     
 }
 
@@ -57,7 +63,8 @@ function PagesContent() {
     if (
         location.pathname === "/" ||
         location.pathname.toLowerCase() === "/signin" ||
-        location.pathname.toLowerCase() === "/signup"
+        location.pathname.toLowerCase() === "/signup" ||
+        location.pathname.toLowerCase() === "/score-my-case"
     ) {
         return (
             <>
@@ -66,6 +73,7 @@ function PagesContent() {
                 <Route path="/" element={<Home />} />
                 <Route path="/signin" element={<SignIn />} />
                 <Route path="/signup" element={<SignUp />} />
+                <Route path="/score-my-case" element={<ScoreMyCase />} />
             </Routes>
             <Footer />
 

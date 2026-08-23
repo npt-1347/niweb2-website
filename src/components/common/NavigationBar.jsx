@@ -8,7 +8,7 @@ const navLinks = [
   { label: "Features", href: "/#features" },
   { label: "How It Works", href: "/#how-it-works" },
   { label: "Pricing", href: "/#pricing" },
-  { label: "Score My Case", href: "/score-case" },
+  { label: "Score My Case", href: "/score-my-case" },
 ];
 
 export default function NavigationBar() {

@@ -6,6 +6,7 @@ import {
   LayoutDashboard, 
   FileText, 
   Upload, 
+  Award,
   CheckCircle2, 
   Settings,
   Plus,
@@ -39,6 +40,11 @@ const navigationItems = [
     title: "Citations",
     url: createPageUrl("Citations"),
     icon: CheckCircle2,
+  },
+  {
+    title: "Score My Case",
+    url: createPageUrl("ScoreMyCase"),
+    icon: Award,
   },
 ];
 
