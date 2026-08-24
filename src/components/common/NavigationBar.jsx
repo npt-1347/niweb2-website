@@ -5,10 +5,10 @@ import { Briefcase, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
-  { label: "Features", href: "/#features" },
-  { label: "How It Works", href: "/#how-it-works" },
-  { label: "Pricing", href: "/#pricing" },
-  { label: "Score My Case", href: "/score-my-case" },
+  { label: "Features", href: `${import.meta.env.BASE_URL}#features` },
+  { label: "How It Works", href: `${import.meta.env.BASE_URL}#how-it-works` },
+  { label: "Pricing", href: `${import.meta.env.BASE_URL}#pricing` },
+  { label: "Score My Case", href: `${import.meta.env.BASE_URL}score-my-case` },
 ];
 
 export default function NavigationBar() {

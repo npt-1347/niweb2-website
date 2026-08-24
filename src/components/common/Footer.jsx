@@ -4,9 +4,9 @@ const footerLinks = [
   {
     heading: "Product",
     links: [
-      { label: "Features", href: "#features" },
-      { label: "How It Works", href: "#how-it-works" },
-      { label: "Pricing", href: "#pricing" },
+      { label: "Features", href: `${import.meta.env.BASE_URL}#features` },
+      { label: "How It Works", href: `${import.meta.env.BASE_URL}#how-it-works` },
+      { label: "Pricing", href: `${import.meta.env.BASE_URL}#pricing` },
     ],
   },
   {
